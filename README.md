@@ -3,7 +3,7 @@ Personal Study Coding File List
 [ 김유진의 코딩 공부 기록 ]
 
 
-< 오준석의 안드로이드 생존코딩 > [ 진행중 ]
+< SurvivalCoding (오준석의 안드로이드 생존코딩) > [ 진행중 ]
 
 1. 비만도 계산기 : BmiCalculator
 2. 스톱워치 : StopWatch

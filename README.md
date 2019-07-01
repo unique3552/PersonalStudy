@@ -1,4 +1,4 @@
-# PersonalStudy
+# KYJ Personal Study
 Personal Study Coding File List
 [ 김유진의 코딩 공부 기록 ]
 

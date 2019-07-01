@@ -9,9 +9,12 @@ import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
+import org.jetbrains.anko.sdk25.coroutines.onTouch
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
 import kotlin.concurrent.timer
@@ -21,6 +24,10 @@ class MainActivity : AppCompatActivity() {
     private val REQUEST_READ_EXTERNAL_STORAGE = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // 화면이 꺼지지 않게 하기
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -99,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.adapter = adapter
 
         // 3초마다 자동 슬라이드
-        timer(period = 3000) {
+        timer(period = 1000) {
             runOnUiThread {
                 if (viewPager.currentItem < adapter.count - 1) {
                     viewPager.currentItem = viewPager.currentItem + 1

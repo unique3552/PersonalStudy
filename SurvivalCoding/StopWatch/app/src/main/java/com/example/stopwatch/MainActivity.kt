@@ -51,8 +51,10 @@ class MainActivity : AppCompatActivity() {
             val milli = time % 100
 
             runOnUiThread {
-                secTextView.text = "$sec"
-                milliTextView.text = "$milli"
+                if (isRunning) {
+                    secTextView.text = "$sec"
+                    milliTextView.text = "$milli"
+                }
             }
         }
     }

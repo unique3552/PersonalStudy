@@ -9,7 +9,7 @@ Personal Study Coding File List
 2. 스톱워치 : StopWatch
 3. 나만의 웹 브라우저 : MyWebBrowser
 4. 수평 측정기 : TiltSensor
-5. 전자액자 : 
+5. 전자액자 : MyGallery
 6. GPS 지도 : 
 7. 손전등 : 
 8. 실로폰 : 

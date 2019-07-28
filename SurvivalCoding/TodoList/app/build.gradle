@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'deploygate'
+
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 
@@ -25,10 +27,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    defaultConfig{
+        vectorDrawables.useSupportLibrary = true;
+    }
+
+    deploygate {
+
+        userName = "unique3552"
+        token = "b02a37a3062a8b4c12d7ad47aef9a7925c7b5ba9"
+
+        apks {
+
+            release {
+                sourceFile = file("build/outputs/apk/release/app-release.apk")
+//                sourceFile = file("release/app-release.apk")
+            }
+
+            debug {
+                sourceFile = file("build/outputs/apk/debug/app-debug.apk")
+            }
+        }
+    }
 }
 
 dependencies {
-    def anko_version = '0.10.5'
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
     implementation 'io.realm:android-adapters:3.1.0'
